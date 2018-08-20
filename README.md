@@ -1,6 +1,6 @@
 # mstreamb0t
 
-Bot that notifies you when a specified manga is released on MangaStream.
+Bot that notifies you when specified mangas are released on MangaStream.
 
  * [Installation](README.md#installation)
       * [Binaries](README.md#binaries)
@@ -35,7 +35,7 @@ docker run --restart=unless-stopped -d \
 
 ```console
 $ mstreamb0t -h
-mstreamb0t -  Bot that notifies you when a specified manga is released on MangaStream.
+mstreamb0t -  Bot that notifies you when specified mangas are released on MangaStream.
 
 Usage: mstreamb0t <command>
 
@@ -43,7 +43,7 @@ Flags:
 
   --interval         update interval (ex. 10s, 1m, 3h) (default: 1m0s)
   --once             run once and exit, do not run as a daemon (default: false)
-  --manga-names  Manga names (default: <none>)
+  --manga-names      Manga names separated by commas (default: <none>)
 
 Commands:
 
