@@ -36,7 +36,7 @@ type Config struct {
 // GetConfigDirPath returns path to config folder
 func (c Config) GetConfigDirPath() (string, error) {
 	// Get home directory.
-	home := os.Getenv("HOME")
+	home := os.Getenv(homeKey)
 	if home != "" {
 		return filepath.Join(home, ".mstreamb0t"), nil
 	}
