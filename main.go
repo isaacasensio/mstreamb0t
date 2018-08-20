@@ -54,12 +54,12 @@ func main() {
 	// Create a new cli program.
 	p := cli.NewProgram()
 	p.Name = "mstreamb0t"
-	p.Description = "Bot that notifies you when a specified manga is released on MangaStream"
+	p.Description = "A simple bot that notifies when a specific manga is released on MangaStream."
 
 	// Setup the global flags.
 	p.FlagSet = flag.NewFlagSet("global", flag.ExitOnError)
 
-	p.FlagSet.StringVar(&mangaNames, "manga-names", os.Getenv("MANGA_NAMES"), "Manga names")
+	p.FlagSet.StringVar(&mangaNames, "manga-names", os.Getenv("MANGA_NAMES"), "manga names separated by commas")
 	p.FlagSet.DurationVar(&interval, "interval", time.Minute, "update interval (ex. 5ms, 10s, 1m, 3h)")
 	p.FlagSet.BoolVar(&once, "once", false, "run once and exit, do not run as a daemon")
 
