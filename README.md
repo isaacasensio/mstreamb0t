@@ -2,8 +2,6 @@
 
 Bot that notifies you when a specified manga is released on MangaStream.
 
-I have OCD about the layout of my calendar events so that is why I made my own bot.
-
  * [Installation](README.md#installation)
       * [Binaries](README.md#binaries)
       * [Via Go](README.md#via-go)
