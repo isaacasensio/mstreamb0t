@@ -28,7 +28,7 @@ docker run --restart=unless-stopped -d \
     -e "PUSHBULLET_TOKEN=o.myowbAB6HinGRxVDNyHbBXs98rwqfzrcc2v" \
     isaacasensio/mstreamb0t:0.0.1 \
     --interval 3h \
-    --manga-names=Hajime,Dragon Ball
+    --manga-names="Hajime,Dragon Ball"
 ```
 
 ## Usage
