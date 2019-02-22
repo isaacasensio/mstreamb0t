@@ -29,6 +29,8 @@ func (c Client) FindNewReleasesSince(mangaNames []string, since time.Time) ([]st
 		return nil, err
 	}
 
+	logrus.Infof("Looking for new releases of %v ...", mangaNames)
+
 	var updates []string
 	for _, item := range feed.Items {
 
@@ -37,6 +39,8 @@ func (c Client) FindNewReleasesSince(mangaNames []string, since time.Time) ([]st
 			logrus.Errorf("Error parsing publication date %s : %v", item.Published, err)
 			return nil, err
 		}
+
+		logrus.Infof("Found manga %s in feed", item.Title)
 
 		for _, mangaName := range mangaNames {
 			if caseInsensitiveContains(item.Title, strings.TrimSpace(mangaName)) && t.After(since) {

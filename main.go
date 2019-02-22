@@ -82,7 +82,7 @@ func main() {
 			}
 		}
 
-		token := os.Getenv("PUSHBULLET_TOKEN")
+		token = os.Getenv("PUSHBULLET_TOKEN")
 		if token == "" {
 			return errors.New("PUSHBULLET_TOKEN not found")
 		}
@@ -151,7 +151,6 @@ func run(mangas []string, lastUpdate time.Time) {
 		logrus.Infof("New release: %s ", item)
 	}
 
-	token := os.Getenv("PUSHBULLET_TOKEN")
 	pb := pbnotifier.NewClient(token, pushbullet.EndpointURL)
 	err = pb.Notify("New manga(s) released!", strings.Join(updates, "\n"))
 	if err != nil {

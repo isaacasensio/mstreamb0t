@@ -125,6 +125,12 @@ clean: ## Cleanup any build binaries or packages
 dockerbuild: ## Builds docker container
 	docker build -t isaacasensio/mstreamb0t:"$(VERSION)" .
 
+.PHONY: dockerpublish
+dockerpublish: 
+	docker tag isaacasensio/mstreamb0t:"$(VERSION)" isaacasensio/mstreamb0t:latest
+	docker push isaacasensio/mstreamb0t:"$(VERSION)"
+	docker push isaacasensio/mstreamb0t:latest
+
 .PHONY: help
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
