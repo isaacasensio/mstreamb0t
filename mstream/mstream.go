@@ -43,7 +43,7 @@ func (c Client) FindNewReleasesSince(mangaNames []string, since time.Time) ([]st
 		logrus.Infof("Found manga %s in feed", item.Title)
 
 		for _, mangaName := range mangaNames {
-			if caseInsensitiveContains(item.Title, strings.TrimSpace(mangaName)) && t.After(since) {
+			if caseInsensitiveContains(item.Title, strings.TrimSpace(mangaName)) && t.UTC().After(since) {
 				updates = append(updates, item.Title)
 			}
 		}
